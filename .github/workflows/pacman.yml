@@ -2,6 +2,7 @@ name: Generate Pac-Man Game
 
 on:
   schedule:
+    # Her gün gece yarısı çalışır
     - cron: "0 0 * * *"
   workflow_dispatch:
   push:
@@ -16,10 +17,18 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Generate Pac-Man SVG
-        uses: abozanona/pacman-contribution-graph@main
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          github_user_name: ${{ github.repository_owner }}
+          node-version: '20'
+
+      - name: Generate Dark Pac-Man SVG
+        run: |
+          mkdir -p dist
+          npx pacman-contribution-graph --platform github --username ${{ github.repository_owner }} --gameTheme github-dark --output dist/pacman-contribution-graph.svg
 
       - name: Push Pac-Man SVG to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
