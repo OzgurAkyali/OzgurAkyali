@@ -28,7 +28,7 @@ jobs:
       - name: Generate Dark Pac-Man SVG
         run: |
           mkdir -p dist
-          npx pacman-contribution-graph --platform github --username ${{ github.repository_owner }} --gameTheme github-dark --output dist/pacman-contribution-graph.svg
+          npx pacman-contribution-graph --game pacman --platform github --username ${{ github.repository_owner }} --gameTheme github-dark --output dist/pacman-contribution-graph.svg
 
       - name: Push Pac-Man SVG to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
