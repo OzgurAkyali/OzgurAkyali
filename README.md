@@ -1,8 +1,8 @@
-<a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=c,cpp,py,postgres,r" />
-</a>
-
-
+<p>
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=c,cpp,py,postgres,r" />
+  </a>
+</p>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/OzgurAkyali/OzgurAkyali/output/pacman-contribution-graph-dark.svg">
