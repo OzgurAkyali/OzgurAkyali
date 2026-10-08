@@ -1,8 +1,7 @@
-name: Generate Pac-Man Game
+name: Generate Pac-Man Style Snake Game
 
 on:
   schedule:
-    # Her gün gece yarısı çalışır
     - cron: "0 0 * * *"
   workflow_dispatch:
   push:
@@ -17,18 +16,12 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Generate Pacman Yellow Snake
+        uses: Platane/snk/svg-only@v3
         with:
-          node-version: '20'
-
-      - name: Generate Dark Pac-Man SVG
-        run: |
-          mkdir -p dist
-          npx pacman-contribution-graph --game pacman --platform github --username ${{ github.repository_owner }} --gameTheme github-dark --output dist/pacman-contribution-graph.svg
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=#FFE600
 
       - name: Push Pac-Man SVG to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
