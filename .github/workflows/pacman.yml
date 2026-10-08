@@ -2,7 +2,7 @@ name: Generate Pac-Man Game
 
 on:
   schedule:
-    # Her gün gece yarısı çalışır
+    # Her gün gece yarısı otomatik çalışır
     - cron: "0 0 * * *"
   workflow_dispatch:
   push:
@@ -21,6 +21,7 @@ jobs:
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
+          theme: github-dark
 
       - name: Push Pac-Man SVG to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
