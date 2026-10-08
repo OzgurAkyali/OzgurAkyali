@@ -1,6 +1,6 @@
 <p>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=c,cpp,py,postgres,r" />
+    <img src="https://skillicons.dev/icons?i=py,mssql,c,cpp,r" />
   </a>
 </p>
 
