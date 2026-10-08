@@ -1,4 +1,6 @@
 # Hey There! 👋
+![Header](https://capsule-render.vercel.app/api?type=waving&color=0:8c4300,100:4b1238&height=180&section=header&text=Hey%20There!%20👋&fontSize=42&fontColor=ffffff)
+
 <p>
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=py,mysql,c,cpp,r" />
